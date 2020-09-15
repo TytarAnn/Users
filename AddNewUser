@@ -1,0 +1,97 @@
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.xml.transform.TransformerException;
+import java.awt.*;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.sql.DriverManager;
+
+public class AddNewUser {
+    public static WebDriver driver;
+    private Object Image;
+
+    /**
+     * @throws InterruptedException
+     */
+    @Test
+
+    public void NewUser () throws InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Java\\chromedriver_win32\\chromedriver.exe");
+
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://users.bugred.ru/user/login/index.html");
+
+        driver.findElement(By.xpath("//input[@name='login']")).sendKeys("ani4ek@i.ua");
+        driver.findElement(By.xpath("//div[@class='row']//div[1]//form[1]//table[1]//tbody[1]//tr[2]//td[2]//input[1]")).sendKeys("1111");
+        driver.findElement(By.xpath("//div[@class='row']//div[1]//form[1]//table[1]//tbody[1]//tr[3]//td[2]//input[1]")).click();
+
+        Thread.sleep(300);
+
+        driver.findElement(By.xpath("/html/body/div[3]/p[1]/a")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/form/table/tbody/tr[1]/td[2]/input")).sendKeys("an8n");
+        driver.findElement(By.xpath("/html/body/div[3]/form/table/tbody/tr[2]/td[2]/input")).sendKeys("ani4ek@gmail.com");
+        Thread.sleep(300);
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[3]/td[2]/input")).sendKeys("1111");
+        driver.findElement(By.xpath("/html/body/div[3]/form/table/tbody/tr[4]/td[2]/input")).sendKeys("D:\\qa\\images\\tenor.gif");
+
+        Image = new Image() {
+            @Override
+            public int getWidth(ImageObserver observer) {
+                return 0;
+            }
+
+            @Override
+            public int getHeight(ImageObserver observer) {
+                return 0;
+            }
+
+            @Override
+            public ImageProducer getSource() {
+                return null;
+            }
+
+            @Override
+            public Graphics getGraphics() {
+                return null;
+            }
+
+            @Override
+            public Object getProperty(String name, ImageObserver observer) {
+                return null;
+            }
+        };
+
+
+        driver.findElement(By.xpath("//*[@id=\"date-time-edit\"]/div/span[1]")).sendKeys("01.");
+        driver.findElement(By.xpath("//*[@id=\"date-time-edit\"]/div/span[2]")).sendKeys("02.");
+        driver.findElement(By.xpath("//*[@id=\"date-time-edit\"]/div/span[3]")).sendKeys("1997");
+        Thread.sleep(200);
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[8]/td[2]/textarea")).sendKeys("Japan");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[9]/td[2]/input")).sendKeys("kkjnlk");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[10]/td[2]/input")).sendKeys("gyil");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[11]/td[2]/input[1]")).sendKeys("cjhjk");
+        Thread.sleep(400);
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[12]/td[2]/input")).sendKeys("hjvi");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[13]/td[2]/input")).sendKeys("jhghg");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[14]/td[2]/input")).sendKeys("pohjg");
+        Thread.sleep(400);
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[15]/td[2]/input")).sendKeys("khb");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[18]/td[2]/input")).sendKeys("555555555");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[19]/td[2]/input")).sendKeys("uyuyuyuyuyuyuyuyg");
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[20]/td[2]/input")).sendKeys("890870");
+        Thread.sleep(200);
+        driver.findElement(By.xpath("/html/body/div[4]/form/table/tbody/tr[21]/td[2]/input")).click();
+
+
+
+    }
+}
+
