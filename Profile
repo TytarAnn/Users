@@ -1,0 +1,53 @@
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Profile {
+
+    public static WebDriver driver;
+
+    /**
+     * @throws InterruptedException
+     */
+    @Test
+
+    public void UserSearch () throws InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Java\\chromedriver_win32\\chromedriver.exe");
+
+        driver =new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://users.bugred.ru/user/login/index.html");
+
+        driver.findElement(By.xpath("//input[@name='login']")).sendKeys("ani4ek@i.ua");
+        driver.findElement(By.xpath("//div[@class='row']//div[1]//form[1]//table[1]//tbody[1]//tr[2]//td[2]//input[1]")).sendKeys("1111");
+        driver.findElement(By.xpath("//div[@class='row']//div[1]//form[1]//table[1]//tbody[1]//tr[3]//td[2]//input[1]")).click();
+        Thread.sleep(600);
+        driver.findElement(By.xpath("//*[@id=\"fat-menu\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"fat-menu\"]/ul/li[1]/a")).click();
+        Thread.sleep(600);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div[2]/form/table/tbody/tr[6]/td[2]/textarea")).sendKeys("dddddddd");
+
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[2]/td[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[2]/td[2]")).clear();
+        Thread.sleep(600);
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[2]/td[2]")).sendKeys("sdfsf");
+        Thread.sleep(600);
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[7]/td[2]/input//div")).click();
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[7]/td[2]/input//div")).sendKeys("2135665635263");
+        Thread.sleep(600);
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[3]/td[2]/select")).click();
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[3]/td[2]/select//div")).click();
+        driver.findElement(By.xpath("//*[@id=\"file-upload-button\"]")).sendKeys("D:\\qa\\images\\tenor.gif");
+        Thread.sleep(600);
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[2]/form/table/tbody/tr[8]/td[2]/input")).click();
+
+
+    }
+
+
+
+
+}
+
